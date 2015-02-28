@@ -1,0 +1,67 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Liste des spectacles jeune public</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+
+
+    <ol class="breadcrumb">
+        <li><a href="{{ path('admin') }}"><p class="fa fa-home"></p> Dashboard</a></li>
+        <li class="active">Spectacles jeune public</li>
+    </ol>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <a href="{{ path('admin_jeunepublic_add')}}"><button class="btn btn-default btn-success">Ajouter un jeune public</button></a>
+        <hr>
+        {# form_start(form, {'action': path('coc_homepage'), 'method': 'GET'}) }} #}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            {% if jeunepublics|length != 0 %}
+                {% for jeunepublic in jeunepublics %}
+                    <tr>
+                        <td>{{ jeunepublic.title }}</td>
+                        <td>
+                            <a href="{{ path('admin_jeunepublic_edit', { 'id': jeunepublic.id }) }}" class="btn btn-default btn-info">Version courte</a>
+                            <a href="{{ path('admin_jeunepublic_edit_long', { 'id': jeunepublic.id }) }}" class="btn btn-default btn-success">Version longue</a>
+                            <a href="{{ path('admin_jeunepublic_delete', { 'id': jeunepublic.id }) }}" class="btn btn-default btn-danger">Suppprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>-</td>
+                    <td>0 spectacle jeune public trouvé</td>
+                    <td>-</td>
+
+                    <td></td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+        <hr>
+
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/footable.js') }}" type="text/javascript"></script>
+{% endblock %}

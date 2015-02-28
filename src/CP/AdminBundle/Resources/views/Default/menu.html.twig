@@ -1,0 +1,128 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="">Administration </a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out fa-fw"></i>  Déconnection</a>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+
+                <li>
+                    <a href="{{ path('admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                </li>
+
+                <li>
+                    <a target="_blank" href="{{ path('cp_homepage') }}"><i class="fa fa-arrow-circle-right fa-fw"></i> Aller sur le site</a>
+                </li>
+
+                <li>
+                    <a href="{{ path('admin_application') }}"><i class="fa fa-bicycle fa-fw"></i> Général</a>
+                </li>
+
+                <li>
+                    <a href="#"><span class="badge">{{ numberSlides }}</span> Slider <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ path('admin_slides') }}">Liste des slides</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('admin_slide_add') }}">Ajouter un slide</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+
+                <li>
+                    <a href="#"><span class="badge">{{ numberSpectacles }}</span> Spectacles <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ path('admin_spectacles') }}">Liste des spectacle</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_spectacleimages') }}">Images des spectacles</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_spectacle_add') }}">Ajouter un spectacle</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+
+                <li>
+                    <a href="#"><span class="badge">{{ numberJeunepublics }}</span> Jeune public <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ path('admin_jeunepublics') }}">Liste des jeune public</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_jeunepublics') }}">Images des jeunes publics</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_jeunepublic_add') }}">Ajouter un jeune public</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a href="#"><span class="badge">{{ numberAgendas }}</span> Agenda <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ path('admin_agendas') }}">Consulter agenda</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('admin_agenda_add') }}">Ajouter une date</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a href="#"><span class="badge">{{ numberArticles }}</span> Boutique <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ path('admin_produits') }}">Liste des produits</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('admin_produit_add') }}">Ajouter un produit</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>

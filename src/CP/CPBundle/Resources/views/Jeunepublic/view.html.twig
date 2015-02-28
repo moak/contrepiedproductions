@@ -1,0 +1,79 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="box">
+            <div class="summary">
+                <img class="summary-image swipebox img-suqare img-responsive pull-right" alt="" width="60%" src="{{ asset('uploads/' ~ jeunepublic.image.path) }}">
+                <h2 class="summary-heading">{{jeunepublic.title }} <span class="text-muted">{{jeunepublic.titleSecond }}</span></h2>
+                <p class="lead">
+                    {{jeunepublic.descriptionLong|raw }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {% if jeunepublicImages != null %}
+        <div class="row">
+            <div class="box">
+                <div class="col-md-12"> <h2>Images</h2></div>
+
+                {% for jeunepublicImage in jeunepublicImages %}
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <a rel="gallery-1"  href="{{ asset('uploads/' ~ jeunepublicImage.path) }}" class="swipebox" title="">
+                                    <img class="img-responsive" src="{{ asset('uploads/' ~ jeunepublicImage.path) }}" />
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if jeunepublic.video1 != null or jeunepublic.video2 != null or jeunepublic.video3 != null %}
+    <div class="row">
+        <div class="box">
+            <div class="col-md-12"> <h2>Vidéos</h2></div>
+            {% if jeunepublic.video2 != null %}
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p> {{ jeunepublic.video1|raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if jeunepublic.video2 != null %}
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p> {{ jeunepublic.video2|raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if jeunepublic.video3 != null %}
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p> {{ jeunepublic.video3|raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+
+{% endblock %}

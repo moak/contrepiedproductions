@@ -1,0 +1,46 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+
+
+                {% for agenda in agendas %}
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="box">
+                                <div class="col-lg-2 text-center">
+                                    <h1 class="number-agenda oswald-font">{{ agenda.date|date('d') }}</h1>
+                                    <h3>{{ agenda.date|date('F')}}</h3>
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <h2 class="oswald-font">{{ agenda.spectacle }}</h2>
+                                    <p>
+                                        <i class="fa fa-street-view"></i></i> {{ agenda.place }}
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-map-marker"></i> {{ agenda.address }}
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-clock-o"></i> {{ agenda.date|date('Y/m/d H:m') }}
+                                        {% if agenda.reservation != null %}
+                                            <a class="btn btn-info pull-right oswald-font" target="_blank" href="{{ agenda.reservation }}">Réserver</a>
+                                        {% endif %}
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4 text-center">
+                                    <img class="img-responsive" src="{{ asset('uploads/' ~ agenda.image.path) }}">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+
+
+
+
+{% endblock %}

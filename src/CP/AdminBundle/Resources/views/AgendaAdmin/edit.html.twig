@@ -1,0 +1,119 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Ajouter une date</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <ol class="breadcrumb">
+        <li><a href="{{ path('admin') }}"><p class="fa fa-home"></p> Dashboard</a></li>
+        <li><a href="{{ path('admin_agendas') }}">Agenda</a></li>
+        <li class="active">Ajouter un agenda</li>
+    </ol>
+
+    <div class="container">
+
+        <div class="well">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+            {{ form_errors(form) }}
+
+            <div class="form-group">
+                {{ form_label(form.spectacle, 'Spectacle', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.spectacle) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.spectacle, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.date, 'Date', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.date) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.date, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.place, 'Lieu', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.place) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.place, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.address, 'Adresse', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.address) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.image, 'Image', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.image) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.image, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Image actuelle</label>
+
+                <div class="col-sm-4">
+                    {%  if agenda.image is defined %}
+                        <img class="img-responsive img-full" src="{{ asset('uploads/' ~ agenda.image.path) }}" alt="">
+                    {% else %}
+                        ldsfdsf
+                    {% endif %}
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                {{ form_label(form.prix, 'Prix', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.prix) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.reservation, 'Lien reservation', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.reservation) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.reservation, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-4">
+                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+                </div>
+            </div>
+
+
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+
+        {{ form(form)}}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/footable.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/player_edit.js') }}" type="text/javascript"></script>
+{% endblock %}

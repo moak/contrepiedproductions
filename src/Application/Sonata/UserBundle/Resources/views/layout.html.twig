@@ -1,0 +1,44 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+
+    <div class="container">
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline pull-right">
+                        <li>
+                            <a href="#"><img src="{{ asset('images/facebook.svg') }}"></a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+
+                        <li>
+                            <a href="#"><img src="{{ asset('images/twitter.svg') }}"></a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; OhMyClan 2015. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+{% endblock %}

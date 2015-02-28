@@ -1,0 +1,10 @@
+CP\CPBundle\Entity\JeunepublicImage:
+  properties:
+        jeunepublic:
+                    - NotBlank: {message: "Please select a group."}
+
+
+CP\CPBundle\Entity\SpectacleImage:
+  properties:
+        spectacle:
+                    - NotBlank: {message: "Please select a group."}

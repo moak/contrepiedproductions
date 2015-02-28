@@ -1,0 +1,150 @@
+admin:
+    path:     /admin
+    defaults: { _controller: AdminBundle:Default:index }
+
+admin_application:
+    path:     /admin/application
+    defaults: { _controller: AdminBundle:ApplicationAdmin:edit }
+
+admin_agendas:
+    path:     /admin/agendas
+    defaults: { _controller: AdminBundle:AgendaAdmin:index }
+
+admin_agenda_add:
+    path:     /admin/agenda/add
+    defaults: { _controller: AdminBundle:AgendaAdmin:add }
+
+admin_agenda_edit:
+    path:     /admin/agenda/edit/{id}
+    defaults: { _controller: AdminBundle:AgendaAdmin:edit }
+
+admin_agenda_delete:
+    path:     /admin/agenda/delete/{id}
+    defaults: { _controller: AdminBundle:AgendaAdmin:delete }
+
+
+
+
+
+
+admin_spectacles:
+    path:     /admin/spectacles
+    defaults: { _controller: AdminBundle:SpectacleAdmin:index }
+
+admin_spectacle_add:
+    path:     /admin/spectacle/add
+    defaults: { _controller: AdminBundle:SpectacleAdmin:add }
+
+admin_spectacle_edit:
+    path:     /admin/spectacle/edit/{id}
+    defaults: { _controller: AdminBundle:SpectacleAdmin:edit }
+
+admin_spectacle_edit_long:
+    path:     /admin/spectacle/edit/long/{id}
+    defaults: { _controller: AdminBundle:SpectacleAdmin:editLong }
+
+
+admin_spectacle_delete:
+    path:     /admin/spectacle/delete/{id}
+    defaults: { _controller: AdminBundle:SpectacleAdmin:delete }
+
+
+admin_jeunepublics:
+    path:     /admin/jeunepublics
+    defaults: { _controller: AdminBundle:JeunepublicAdmin:index }
+
+admin_jeunepublic_add:
+    path:     /admin/jeunepublic/add
+    defaults: { _controller: AdminBundle:JeunepublicAdmin:add }
+
+admin_jeunepublic_edit:
+    path:     /admin/jeunepublic/edit/{id}
+    defaults: { _controller: AdminBundle:JeunepublicAdmin:edit }
+
+admin_jeunepublic_edit_long:
+    path:     /admin/jeunepublic/edit/long/{id}
+    defaults: { _controller: AdminBundle:JeunepublicAdmin:editLong }
+
+admin_jeunepublic_delete:
+    path:     /admin/jeunepublic/delete/{id}
+    defaults: { _controller: AdminBundle:JeunepublicAdmin:delete }
+
+
+admin_slides:
+    path:     /admin/slides
+    defaults: { _controller: AdminBundle:SlideAdmin:index }
+
+admin_slide_add:
+    path:     /admin/slide/add
+    defaults: { _controller: AdminBundle:SlideAdmin:add }
+
+admin_slide_edit:
+    path:     /admin/slide/edit/{id}
+    defaults: { _controller: AdminBundle:SlideAdmin:edit }
+
+admin_slide_delete:
+    path:     /admin/slide/delete/{id}
+    defaults: { _controller: AdminBundle:SlideAdmin:delete }
+
+
+admin_produits:
+    path:     /admin/produits
+    defaults: { _controller: AdminBundle:ProduitAdmin:index }
+
+admin_produit_add:
+    path:     /admin/produit/add
+    defaults: { _controller: AdminBundle:ProduitAdmin:add }
+
+admin_produit_edit:
+    path:     /admin/produit/edit/{id}
+    defaults: { _controller: AdminBundle:ProduitAdmin:edit }
+
+admin_produit_delete:
+    path:     /admin/produit/delete/{id}
+    defaults: { _controller: AdminBundle:ProduitAdmin:delete }
+
+
+
+admin_jeunepublicimages:
+    path:     /admin/jeunepublicimages
+    defaults: { _controller: AdminBundle:JeunepublicImageAdmin:index }
+
+admin_jeunepublicimage_add:
+    path:     /admin/jeunepublicimage/add
+    defaults: { _controller: AdminBundle:JeunepublicImageAdmin:add }
+
+admin_jeunepublicimage_edit:
+    path:     /admin/jeunepublicimage/edit/{id}
+    defaults: { _controller: AdminBundle:JeunepublicImageAdmin:edit }
+
+admin_jeunepublicimage_edit_long:
+    path:     /admin/jeunepublicimage/edit/long/{id}
+    defaults: { _controller: AdminBundle:JeunepublicImageAdmin:editLong }
+
+admin_jeunepublicimage_delete:
+    path:     /admin/jeunepublicimage/delete/{id}
+    defaults: { _controller: AdminBundle:JeunepublicImageAdmin:delete }
+
+
+
+
+
+admin_spectacleimages:
+    path:     /admin/spectacleimages
+    defaults: { _controller: AdminBundle:SpectacleImageAdmin:index }
+
+admin_spectacleimage_add:
+    path:     /admin/spectacleimage/add
+    defaults: { _controller: AdminBundle:SpectacleImageAdmin:add }
+
+admin_spectacleimage_edit:
+    path:     /admin/spectacleimage/edit/{id}
+    defaults: { _controller: AdminBundle:SpectacleImageAdmin:edit }
+
+admin_spectacleimage_edit_long:
+    path:     /admin/spectacleimage/edit/long/{id}
+    defaults: { _controller: AdminBundle:SpectacleImageAdmin:editLong }
+
+admin_spectacleimage_delete:
+    path:     /admin/spectacleimage/delete/{id}
+    defaults: { _controller: AdminBundle:SpectacleImageAdmin:delete }

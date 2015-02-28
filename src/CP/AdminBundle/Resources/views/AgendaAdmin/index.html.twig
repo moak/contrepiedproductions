@@ -1,0 +1,73 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Liste des dates</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+
+
+    <ol class="breadcrumb">
+        <li><a href="{{ path('admin') }}"><p class="fa fa-home"></p> Dashboard</a></li>
+        <li class="active">Dates</li>
+    </ol>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <a href="{{ path('admin_agenda_add')}}"><button class="btn btn-default btn-success">Ajouter une date</button></a>
+        <hr>
+        {# form_start(form, {'action': path('coc_homepage'), 'method': 'GET'}) }} #}
+
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Lieu</th>
+                    <th>Spectacle</th>
+                    <th>Prix</th>
+                    <th>Adresse</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            {% if agendas|length != 0 %}
+                {% for agenda in agendas %}
+                    <tr>
+                        <td>{{ agenda.date|date('d M à H:s') }}</td>
+                        <td>{{ agenda.place }}</td>
+                        <td>{{ agenda.spectacle }}</td>
+                        <td>{{ agenda.prix }}</td>
+                        <td>{{ agenda.address }}</td>
+                        <td>
+                            <a href="{{ path('admin_agenda_edit', { 'id': agenda.id }) }}" class="btn btn-default btn-info">Editer</a>
+                            <a href="{{ path('admin_agenda_delete', { 'id': agenda.id }) }}" class="btn btn-default btn-danger">Suppprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>-</td>
+                    <td>0 date trouvée</td>
+                    <td>-</td>
+
+                    <td></td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+        <hr>
+
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/footable.js') }}" type="text/javascript"></script>
+{% endblock %}

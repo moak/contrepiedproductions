@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    {% for representation in representations %}
+    <div class="row">
+        <div class="box">
+
+                <h2 class="intro-text">
+                    <div class="col-md-6"><strong>{{ representation.title }}</strong></div>
+                    <div class="col-md-6"><span class="pull-right">{{ representation.titleSecond }}</span></div>
+                </h2>
+
+                <div class="col-md-3">
+                    <img class="img-responsive " src="{{ asset('img/1.png') }}" alt="">
+                </div>
+                <div class="col-md-9">
+                    <div class="col-md-6">Pour les {{ representation.agefrom }} -{{ representation.ageto }} ans</div>
+                    <div class="col-md-6"><span class="pull-right">Durée : {{ representation.duration / 60 }}h</span></div>
+                    <hr>
+                    <p>
+                        {{ representation.descriptionShort }}
+                    </p>
+                </div>
+
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}

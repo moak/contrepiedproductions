@@ -1,0 +1,89 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Général</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <ol class="breadcrumb">
+        <li><a href="{{ path('admin') }}"><p class="fa fa-home"></p> Dashboard</a></li>
+        <li class="active">Général</li>
+    </ol>
+
+    <div class="container">
+
+        <div class="well">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+            {{ form_errors(form) }}
+
+            <div class="form-group">
+                {{ form_label(form.title, 'Titre général', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.title) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.citation, 'Phrase sous les slides', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.citation) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.citation, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.title_second, 'Sous titre', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.title_second) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.title_second, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                {{ form_label(form.spectacle, 'Dernier Spectacle', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.spectacle) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.spectacle, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.jeunepublic, 'Dernier Jeune public', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.jeunepublic) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.jeunepublic, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-4">
+                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+                </div>
+            </div>
+
+
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+
+        {{ form(form)}}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/footable.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/player_edit.js') }}" type="text/javascript"></script>
+{% endblock %}

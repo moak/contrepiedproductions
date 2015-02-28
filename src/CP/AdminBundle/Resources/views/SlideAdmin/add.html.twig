@@ -1,0 +1,62 @@
+{% extends "::base_admin.html.twig" %}
+
+ {% block title %}
+     <title>Ajouter un slide</title>
+ {% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Ajouter un slide</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <ol class="breadcrumb">
+        <li><a href="{{ path('admin') }}"><p class="fa fa-home"></p> Dashboard</a></li>
+        <li><a href="{{ path('admin_slides') }}">Slide</a></li>
+        <li class="active">Ajouter un slide</li>
+    </ol>
+
+    <div class="container">
+
+        <div class="well">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+            {{ form_errors(form) }}
+
+            <div class="form-group">
+                {{ form_label(form.published, 'Publié', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.published) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.published, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                {{ form_label(form.image, 'Image', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_errors(form.image) }}
+
+                <div class="col-sm-4">
+                    {{ form_widget(form.image, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-4">
+                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+                </div>
+            </div>
+
+
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+
+        {{ form(form)}}
+    </div>
+{% endblock %}
+

@@ -1,0 +1,42 @@
+<?php
+namespace CP\CPBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Media
+ *
+ * @ORM\Table("video")
+ * @ORM\Entity(repositoryClass="CP\CPBundle\Repository\VideoRepository")
+ */
+class Video
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @var \DateTime
+     *
+     * @ORM\COlumn(name="updated_at",type="datetime", nullable=true)
+     */
+    private $updateAt;
+
+    /**
+     * @ORM\Column(type="string",length=255, nullable=true)
+     */
+    public $url;
+
+    /**
+     * @ORM\OneToMany(targetEntity="CP\CPBundle\Entity\Spectacle", mappedBy="video")
+     **/
+    private $spectacle ;
+
+    /**
+     * @ORM\OneToMany(targetEntity="CP\CPBundle\Entity\Jeunepublic", mappedBy="video")
+     **/
+    private $jeunepublic ;
+}

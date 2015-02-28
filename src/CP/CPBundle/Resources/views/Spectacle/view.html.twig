@@ -1,0 +1,89 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+
+    <div class="row">
+        <div class="box">
+            <div class="summary">
+                <img class="summary-image img-suqare img-responsive pull-right" alt="" width="60%" src="{{ asset('uploads/' ~ spectacle.image.path) }}">
+                <h2 class="summary-heading">{{ spectacle.title }} <span class="text-muted">{{ spectacle.titleSecond }}</span></h2>
+                <p class="lead">
+                    {{ spectacle.descriptionLong|raw }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    {% if spectacleImages != null %}
+        <div class="row">
+            <div class="box">
+                <div class="col-md-12"> <h2>Images</h2></div>
+
+                {% for spectacleImage in spectacleImages %}
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <a rel="gallery-1"  href="{{ asset('uploads/' ~ spectacleImage.path) }}" class="swipebox" title="">
+                                    <img class="img-responsive" src="{{ asset('uploads/' ~ spectacleImage.path) }}" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if spectacle.video1 != null or spectacle.video2 != null or spectacle.video3 != null %}
+        <div class="row">
+            <div class="box">
+                <div class="col-md-12"> <h2>Vidéos</h2></div>
+                {% if spectacle.video2 != null %}
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p> {{ spectacle.video1|raw }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if spectacle.video2 != null %}
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p> {{ spectacle.video2|raw }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if spectacle.video3 != null %}
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p> {{ spectacle.video3|raw }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

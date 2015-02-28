@@ -1,0 +1,39 @@
+cp_homepage:
+    path:     /
+    defaults: { _controller: CPBundle:Default:index }
+
+cp_contact:
+    path:     /contact
+    defaults: { _controller: CPBundle:Default:contact }
+
+cp_newsletter:
+    path:     /newsletter
+    defaults: { _controller: CPBundle:Default:newsletter }
+
+cp_spectacles:
+    path:     /spectacles
+    defaults: { _controller: CPBundle:Spectacle:index }
+
+cp_spectacle_view:
+    path:     /spectacle/{id}
+    defaults: { _controller: CPBundle:Spectacle:view}
+
+cp_produits:
+    path:     /produits
+    defaults: { _controller: CPBundle:Produit:index }
+
+cp_produit:
+    path:     /produit/{id}
+    defaults: { _controller: CPBundle:Produit:produit }
+
+cp_jeunepublics:
+    path:     /jeunepublics
+    defaults: { _controller: CPBundle:Jeunepublic:index }
+
+cp_jeunepublic_view:
+    path:     /jeunepublic/{id}
+    defaults: { _controller: CPBundle:Jeunepublic:view}
+
+cp_agenda:
+    path:     /agenda
+    defaults: { _controller: CPBundle:Agenda:index }

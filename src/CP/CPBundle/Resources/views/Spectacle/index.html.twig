@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    {% for representation in representations %}
+    <div class="row">
+        <div class="box">
+
+                <div class="col-md-4">
+                    <br><br>
+                    <p class="title text-center"><strong>{{ representation.titleSecond }}</strong></p>
+                    <a href="{{ path('cp_spectacle_view' , {'id': representation.id }) }}"> <img class="img-responsive " src="{{ asset('uploads/' ~ representation.image.path) }}" alt=""></a>
+                </div>
+                <div class="col-md-8">
+                    <p class="title_second text-center">{{ representation.title }}</p>
+                    <span class="pull-right"><h3><strong>{{ representation.prix }} €</strong></h3></span>
+                    <hr>
+                    <p>
+                        {{ representation.descriptionShort|raw }}
+                    </p>
+                    <p class="pull-right"><a href="{{ path('cp_spectacle_view' , {'id': representation.id }) }}"><button class="btn btn-block btn-info">Plus d'info</button></a></p>
+
+                </div>
+
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}

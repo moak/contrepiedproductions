@@ -1,0 +1,24 @@
+
+    <div class="row">
+        <div class="box">
+
+                <div class="col-md-4">
+                    <br><br><br><br>
+                    <img class="img-responsive text-center "src="{{ asset('uploads/' ~ representation.image.path) }}" alt="">
+                </div>
+                <div class="col-md-8">
+                    <p class="title_second text-center">{{ representation.title }}</p>
+                    <span class="pull-right"><h3><strong>{{ representation.prix }} €</strong></h3></span>
+
+                    <p>
+                        {{ representation.descriptionShort|raw }}
+                    </p>
+                    <br><br>
+                    <p class="pull-right"><a href="{{ path('cp_spectacle_view' , {'id': representation.id }) }}"><button class="btn btn-block btn-info">Plus d'info</button></a></p>
+
+                </div>
+
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
