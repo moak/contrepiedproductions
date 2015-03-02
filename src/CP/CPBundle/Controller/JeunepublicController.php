@@ -13,7 +13,7 @@ class JeunepublicController extends Controller
         $em = $this->getDoctrine()->getManager();
         $representations = $em->getRepository('CPBundle:Jeunepublic')->findBy(array('published' => '1'));
 
-        return $this->render('CPBundle:JeunePublic:index.html.twig', array('representations'=> $representations));
+        return $this->render('CPBundle:Jeunepublic:index.html.twig', array('representations'=> $representations));
     }
 
     public function viewAction($id)
